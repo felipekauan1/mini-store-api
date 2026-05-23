@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produto extends Model
 {
+    protected $hidden = ['created_at', 'updated_at'];
+
     protected $fillable = [
         'nome',
         'preco',
@@ -14,8 +16,8 @@ class Produto extends Model
     ];
 
     protected $casts = [
-        'preco'    => 'float',
-        'estoque'  => 'integer',
+        'preco'   => 'decimal:2',
+        'estoque' => 'integer',
     ];
 
     public function categoria()
