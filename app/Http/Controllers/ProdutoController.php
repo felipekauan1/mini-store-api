@@ -49,6 +49,8 @@ class ProdutoController extends Controller
             $request->validated()
         );
 
+        $produto->refresh();
+
         // Carrega o relacionamento antes de retornar
         $produto->load('categoria');
 
