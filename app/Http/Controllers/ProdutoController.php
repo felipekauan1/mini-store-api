@@ -27,6 +27,16 @@ class ProdutoController extends Controller
         ]);
     }
 
+    public function show(Produto $produto)
+    {
+        $produto->load('categoria');
+
+        return response()->json([
+            'sucesso'  => true,
+            'produto' => $produto,
+        ]);
+    }
+
     public function store(StoreProdutoRequest $request)
     {
         $produto = Produto::create(
