@@ -28,7 +28,7 @@ class ClienteController extends Controller
             'sucesso'  => true,
             'mensagem' => 'Cliente cadastrado!',
             'dados' => $cliente,
-        ]);
+        ], 201);
     }
 
     public function show(Cliente $cliente)
