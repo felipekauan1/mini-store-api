@@ -24,6 +24,8 @@ class PedidoController extends Controller
             $request->validated()
         );
 
+        $pedido->load('cliente');
+
         return response()->json([
             'sucesso'  => true,
             'mensagem' => 'Pedido cadastrado!',
