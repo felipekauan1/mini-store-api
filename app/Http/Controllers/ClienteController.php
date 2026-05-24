@@ -24,6 +24,8 @@ class ClienteController extends Controller
             $request->validated()
         );
 
+        $cliente->refresh();
+
         return response()->json([
             'sucesso'  => true,
             'mensagem' => 'Cliente cadastrado!',
